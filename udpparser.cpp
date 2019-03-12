@@ -5,7 +5,6 @@
 UdpParser::UdpParser(QObject *parent) : QObject(parent)
 {
     ringBuffer = std::make_shared<RingBuffer>(65536);  //the whole cycle of data numbers 0..65535
-    //ringBuffer = new RingBuffer(65536);
 }
 
 void UdpParser::setFree()
@@ -52,11 +51,8 @@ void UdpParser::parseReceivedDatagram(QByteArray received_packet)
         channelsData.push_back(received_packet.mid(16 + (i - 1) * 4, 4));
     }
 
-    //qDebug() << packetTime;
-    ParsedUdpPacket parsedPacket(packetNo, packetTime, channelsData);
-
     ringBuffer->push_back({packetNo, packetTime, channelsData});
-    qDebug() << ringBuffer->front().timeStamp;
+    //qDebug() << ringBuffer->front().timeStamp;
 }
 
 

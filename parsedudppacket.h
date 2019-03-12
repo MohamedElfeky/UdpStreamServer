@@ -14,13 +14,13 @@ struct ParsedUdpPacket
     ParsedUdpPacket(quint64 packNo, PacketDateTime time, QVector<QByteArray> samples);
 
     //copy constructor
-    ParsedUdpPacket(ParsedUdpPacket& other);
+    ParsedUdpPacket(const ParsedUdpPacket& other);
     //move constructor
-    ParsedUdpPacket(ParsedUdpPacket&& other);
+    ParsedUdpPacket(const ParsedUdpPacket&& other);
     //copy assigment
-    ParsedUdpPacket &operator=(ParsedUdpPacket& other);
+    ParsedUdpPacket &operator=(const ParsedUdpPacket& other);
     //move assigment
-    ParsedUdpPacket &operator=(ParsedUdpPacket&& other);
+    ParsedUdpPacket &operator=(const ParsedUdpPacket&& other);
 
     ~ParsedUdpPacket();
 };

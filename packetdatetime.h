@@ -6,11 +6,11 @@ class PacketDateTime : public QDateTime
 {
 public:
     PacketDateTime();
-    PacketDateTime(PacketDateTime& other);
-    PacketDateTime &operator=(PacketDateTime& other);
+    PacketDateTime(const PacketDateTime& other);
+    PacketDateTime &operator=(const PacketDateTime& other);
 
-    PacketDateTime(PacketDateTime&& other);
-    PacketDateTime &operator=(PacketDateTime&& other);
+    PacketDateTime(const PacketDateTime&& other);
+    PacketDateTime &operator=(const PacketDateTime&& other);
 
     virtual ~PacketDateTime();
 

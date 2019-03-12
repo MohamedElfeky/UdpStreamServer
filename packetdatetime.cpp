@@ -5,13 +5,13 @@ PacketDateTime::PacketDateTime()
 
 }
 
-PacketDateTime::PacketDateTime(PacketDateTime &other):
+PacketDateTime::PacketDateTime(const PacketDateTime &other):
     QDateTime(other)
 {
     microsec = other.getMicroSec();
 }
 
-PacketDateTime &PacketDateTime::operator=(PacketDateTime &other)
+PacketDateTime &PacketDateTime::operator=(const PacketDateTime &other)
 {
     if (this != &other){
         QDateTime::operator=(other);
@@ -20,13 +20,13 @@ PacketDateTime &PacketDateTime::operator=(PacketDateTime &other)
     return *this;
 }
 
-PacketDateTime::PacketDateTime(PacketDateTime &&other):
+PacketDateTime::PacketDateTime(const PacketDateTime &&other):
     QDateTime(std::move(other)), microsec(std::move(other.microsec))
 {
 
 }
 
-PacketDateTime &PacketDateTime::operator=(PacketDateTime &&other)
+PacketDateTime &PacketDateTime::operator=(const PacketDateTime &&other)
 {
     if (this != &other){
         QDateTime::operator=(std::move(other));

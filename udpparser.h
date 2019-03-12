@@ -24,11 +24,9 @@ private:
     bool isParserFree = true;
     using  RingBuffer = boost::circular_buffer<ParsedUdpPacket>;
     std::shared_ptr<RingBuffer> ringBuffer;
-    //RingBuffer* ringBuffer;
 
 public:
      explicit UdpParser(QObject *parent = nullptr);
-     //QVector<ParsedUdpPacket>& getStreamedParsedData();
      void setFree();
      void setBusy();
      bool isFree();
