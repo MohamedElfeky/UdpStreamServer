@@ -23,8 +23,8 @@ private:
     static const int CHANNEL_NUMBERS = 96;
     bool isParserFree = true;
     using  RingBuffer = boost::circular_buffer<ParsedUdpPacket>;
-    //std::shared_ptr<RingBuffer> ringBuffer;
-    RingBuffer* ringBuffer;
+    std::shared_ptr<RingBuffer> ringBuffer;
+    //RingBuffer* ringBuffer;
 
 public:
      explicit UdpParser(QObject *parent = nullptr);
